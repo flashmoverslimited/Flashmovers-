@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="Professional moving for homes and offices across Nairobi and Kenya. We pack, load and deliver without the drama.">
+<title>Flash Movers | Moving Nairobi &amp; Kenya, fast.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0a0a0a;
+  --charcoal:#151515;
+  --charcoal-2:#1c1c1c;
+  --red:#e6293f;
+  --red-dim:#a91e2f;
+  --white:#f4f3ef;
+  --gray:#8f8f8c;
+  --line:rgba(244,243,239,0.09);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{
+  font-family:'Anton',sans-serif;
+  font-weight:400;
+  letter-spacing:0.01em;
+  line-height:0.95;
+  text-transform:uppercase;
+}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+::selection{background:var(--red);color:var(--white);}
+
+/* ---------- Nav ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(10,10,10,0.82);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);transition:transform .4s ease;
+}
+header.hide{transform:translateY(-100%);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo{font-family:'Anton',sans-serif;font-size:20px;letter-spacing:0.03em;display:flex;align-items:center;gap:8px;text-transform:uppercase;}
+.logo .bolt{color:var(--red);}
+.nav-links{display:flex;gap:34px;font-size:14px;font-weight:600;}
+.nav-links a{position:relative;padding-bottom:4px;color:var(--white);opacity:0.85;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--red);transition:width .3s ease;}
+.nav-links a:hover{opacity:1;}
+.nav-links a:hover::after{width:100%;}
+.nav-right{display:flex;align-items:center;gap:18px;}
+.nav-phone{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.nav-phone svg{width:15px;height:15px;fill:var(--red);}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:13px 26px;font-size:14px;font-weight:700;
+  border-radius:999px;border:1px solid transparent;cursor:pointer;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1), background .3s ease, color .3s ease, border-color .3s ease;
+}
+.btn-primary{background:var(--red);color:#fff;}
+.btn-primary:hover{transform:translateY(-2px);background:#ff3850;}
+.btn-ghost{border-color:rgba(244,243,239,0.25);color:var(--white);background:transparent;}
+.btn-ghost:hover{border-color:var(--white);transform:translateY(-2px);}
+.btn-text{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--white);border-bottom:1px solid var(--line);padding-bottom:4px;transition:border-color .3s ease,color .3s ease,gap .3s ease;}
+.btn-text:hover{color:var(--red);border-color:var(--red);gap:12px;}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:40px;height:40px;align-items:center;justify-content:center;cursor:pointer;}
+.menu-toggle svg{width:18px;height:18px;fill:var(--white);}
+.mobile-menu{
+  display:none;position:fixed;inset:72px 0 0 0;z-index:49;background:var(--black);
+  padding:36px 28px;flex-direction:column;gap:4px;border-top:1px solid var(--line);
+  transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .3s ease, transform .3s ease;
+}
+.mobile-menu.open{opacity:1;transform:translateY(0);pointer-events:auto;}
+.mobile-menu a{padding:18px 0;font-size:22px;font-family:'Anton',sans-serif;text-transform:uppercase;border-bottom:1px solid var(--line);}
+.mobile-menu .btn{margin-top:24px;justify-content:center;}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:center;
+  padding-top:110px;padding-bottom:60px;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 82% 15%, rgba(230,41,63,0.20), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 10% 95%, rgba(230,41,63,0.10), transparent 60%);
+}
+.hero-lines{position:absolute;inset:0;z-index:0;opacity:0.5;}
+.hero-content{position:relative;z-index:2;max-width:780px;}
+.eyebrow-tag{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--gray);
+  border:1px solid var(--line);padding:8px 16px;border-radius:999px;margin-bottom:28px;
+  background:rgba(21,21,21,0.5);
+}
+.eyebrow-tag span.dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 1.6s infinite;}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(230,41,63,0.6);}
+  70%{box-shadow:0 0 0 8px rgba(230,41,63,0);}
+  100%{box-shadow:0 0 0 0 rgba(230,41,63,0);}
+}
+.hero h1{font-size:clamp(46px,8vw,92px);margin-bottom:26px;}
+.hero h1 em{font-style:normal;color:var(--red);}
+.hero p.lead{font-size:18px;color:#c9c9c5;max-width:520px;line-height:1.6;margin-bottom:38px;}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+.hero-stats{display:flex;gap:48px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:28px;margin-bottom:28px;}
+.stat b{font-family:'Anton',sans-serif;font-size:28px;display:block;color:var(--white);}
+.stat span{font-size:13px;color:var(--gray);}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--gray);font-weight:600;}
+.hero-kenya{
+  position:absolute;right:28px;top:130px;z-index:2;font-family:'Anton',sans-serif;
+  font-size:14px;letter-spacing:0.08em;color:var(--gray);display:flex;align-items:center;gap:8px;
+}
+.hero-kenya span{color:var(--red);}
+
+/* ---------- Section shared ---------- */
+section{padding:120px 0;position:relative;}
+.section-head{max-width:640px;margin-bottom:64px;}
+.section-eyebrow{font-size:13px;font-weight:700;letter-spacing:0.06em;color:var(--red);margin-bottom:18px;display:block;}
+.section-head h2{font-size:clamp(32px,4.5vw,52px);margin-bottom:18px;}
+.section-head h2 em{font-style:normal;color:var(--red);}
+.section-head p{color:var(--gray);font-size:16px;line-height:1.7;}
+
+/* ---------- Gallery (work in motion) ---------- */
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.work-item{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;border:1px solid var(--line);background:var(--charcoal);}
+.work-item:nth-child(2){transform:translateY(28px);}
+.work-item:nth-child(4){transform:translateY(-14px);}
+.work-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1);}
+.work-item:hover img{transform:scale(1.07);}
+.work-num{position:absolute;top:14px;left:14px;font-family:'Anton',sans-serif;font-size:13px;color:var(--red);z-index:1;}
+.work-cap{
+  position:absolute;left:0;right:0;bottom:0;padding:18px 16px;
+  background:linear-gradient(0deg, rgba(0,0,0,0.85), transparent);
+}
+.work-cap b{display:block;font-size:14.5px;font-weight:700;margin-bottom:2px;}
+.work-cap span{font-size:12.5px;color:var(--gray);}
+
+/* ---------- Services ---------- */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.service-card{
+  background:var(--charcoal);border:1px solid var(--line);border-radius:18px;
+  padding:32px 26px;transition:border-color .3s ease, transform .3s ease, background .3s ease;
+}
+.service-card:hover{border-color:rgba(230,41,63,0.5);transform:translateY(-6px);background:var(--charcoal-2);}
+.service-num{font-family:'Anton',sans-serif;font-size:14px;color:var(--red);display:flex;align-items:center;gap:6px;margin-bottom:24px;}
+.service-card h3{font-family:'Inter',sans-serif;text-transform:none;font-weight:700;font-size:19px;margin-bottom:10px;letter-spacing:0;}
+.service-card p{font-size:14.5px;color:var(--gray);line-height:1.6;margin-bottom:20px;}
+.service-card .btn-text{font-size:13px;}
+
+/* ---------- Process ---------- */
+.process-wrap{position:relative;}
+.process{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+}
+.process-step{background:var(--black);padding:38px 30px;position:relative;}
+.process-step .num{font-family:'Anton',sans-serif;font-size:15px;color:var(--red);display:block;margin-bottom:22px;}
+.process-step h3{font-family:'Inter',sans-serif;text-transform:none;font-size:18px;font-weight:700;letter-spacing:0;margin-bottom:10px;}
+.process-step p{font-size:14px;color:var(--gray);line-height:1.6;}
+.process-wm{
+  font-family:'Anton',sans-serif;font-size:clamp(60px,13vw,160px);color:transparent;
+  -webkit-text-stroke:1px var(--line);text-align:right;margin-top:40px;letter-spacing:0.02em;
+  display:flex;align-items:center;justify-content:flex-end;gap:16px;
+}
+.process-wm span{-webkit-text-stroke:0;color:var(--red);font-size:0.5em;}
+
+/* ---------- Why us ---------- */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:56px;}
+.why-item{background:var(--black);padding:40px 32px;}
+.why-num{font-family:'Anton',sans-serif;color:var(--red);font-size:18px;display:block;margin-bottom:20px;}
+.why-item h3{font-family:'Inter',sans-serif;text-transform:none;letter-spacing:0;font-size:18px;font-weight:700;margin-bottom:10px;}
+.why-item p{font-size:14.5px;color:var(--gray);line-height:1.7;}
+.why-wm{
+  font-family:'Anton',sans-serif;font-size:clamp(50px,11vw,140px);color:transparent;
+  -webkit-text-stroke:1px var(--line);text-align:center;letter-spacing:0.02em;display:flex;
+  align-items:center;justify-content:center;gap:16px;
+}
+.why-wm span{-webkit-text-stroke:0;color:var(--red);font-size:0.55em;}
+
+/* ---------- Testimonials ---------- */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.testi-card{background:var(--charcoal);border:1px solid var(--line);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;}
+.stars{color:var(--red);font-size:14px;letter-spacing:2px;}
+.testi-card blockquote{font-size:16px;line-height:1.6;color:var(--white);flex:1;}
+.testi-who{display:flex;align-items:center;gap:12px;}
+.testi-avatar{
+  width:40px;height:40px;border-radius:50%;background:var(--red-dim);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;
+}
+.testi-who b{display:block;font-size:14.5px;font-weight:700;}
+.testi-who span{font-size:12.5px;color:var(--gray);}
+
+/* ---------- Coverage ---------- */
+.coverage{
+  border-radius:24px;padding:70px 60px;display:flex;justify-content:space-between;gap:40px;
+  flex-wrap:wrap;position:relative;overflow:hidden;isolation:isolate;
+  background:
+    radial-gradient(circle 500px at 85% -10%, rgba(230,41,63,0.22), transparent 70%),
+    var(--charcoal);
+  border:1px solid var(--line);
+}
+.coverage-text{max-width:420px;position:relative;z-index:1;}
+.coverage-text h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px;}
+.coverage-text h2 em{font-style:normal;color:var(--red);}
+.coverage-text p{color:var(--gray);line-height:1.7;margin-bottom:28px;}
+.coverage-towns{display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:1;align-content:flex-start;max-width:480px;}
+.town{padding:10px 18px;border:1px solid rgba(244,243,239,0.18);border-radius:999px;font-size:14px;font-weight:600;background:rgba(10,10,10,0.35);}
+
+/* ---------- FAQ ---------- */
+.faq-list{border-top:1px solid var(--line);}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;
+  background:none;border:none;color:var(--white);text-align:left;padding:26px 4px;
+  font-size:18px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;
+}
+.faq-q .plus{
+  flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;position:relative;transition:transform .3s ease,border-color .3s ease;
+}
+.faq-q .plus::before,.faq-q .plus::after{content:'';position:absolute;background:var(--white);transition:transform .3s ease;}
+.faq-q .plus::before{width:12px;height:1.5px;}
+.faq-q .plus::after{width:1.5px;height:12px;}
+.faq-item.open .faq-q .plus{border-color:var(--red);}
+.faq-item.open .faq-q .plus::after{transform:rotate(90deg) scaleY(0);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{padding:0 4px 26px;color:var(--gray);font-size:15px;line-height:1.7;max-width:640px;}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:flex-start;}
+.contact-text h2{font-size:clamp(32px,4.5vw,52px);margin-bottom:18px;}
+.contact-text h2 em{font-style:normal;color:var(--red);}
+.contact-text p{color:var(--gray);font-size:16px;line-height:1.7;}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.field{display:flex;flex-direction:column;gap:8px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:12.5px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:0.04em;}
+.field input{
+  background:var(--charcoal);border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+  color:var(--white);font-size:15px;font-family:'Inter',sans-serif;transition:border-color .3s ease;
+}
+.field input:focus{outline:none;border-color:var(--red);}
+.field input::placeholder{color:#6b6b68;}
+.contact-form .btn{grid-column:1/-1;justify-content:center;margin-top:8px;}
+.form-note{grid-column:1/-1;font-size:12.5px;color:var(--gray);text-align:center;margin-top:4px;}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);padding:70px 0 30px;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:50px;}
+.footer-brand .logo{margin-bottom:14px;}
+.footer-brand p{color:var(--gray);font-size:14.5px;}
+.footer-phone{font-family:'Anton',sans-serif;font-size:22px;display:flex;align-items:center;gap:10px;}
+.footer-phone svg{width:16px;height:16px;fill:var(--red);}
+.footer-bottom{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--gray);}
+.footer-bottom a:hover{color:var(--red);}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .nav-links{display:none;}
+  .menu-toggle{display:flex;}
+  .nav-phone{display:none;}
+  .hero-kenya{display:none;}
+  .work-grid{grid-template-columns:repeat(2,1fr);}
+  .work-item:nth-child(2),.work-item:nth-child(4){transform:none;}
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .process{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .coverage{padding:44px 26px;}
+  .footer-top{flex-direction:column;align-items:flex-start;}
+}
+@media (max-width:560px){
+  .services-grid{grid-template-columns:1fr;}
+  .process{grid-template-columns:1fr;}
+  .contact-form{grid-template-columns:1fr;}
+  .hero-stats{gap:30px;}
+  .hero-ctas{flex-direction:column;width:100%;}
+  .hero-ctas .btn{width:100%;justify-content:center;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important;transition-duration:0.001ms !important;}
+  .reveal{opacity:1;transform:none;}
+}
+
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+
+/* ---------- Cursor flash trail ---------- */
+#flash-trail{position:fixed;inset:0;pointer-events:none;z-index:40;mix-blend-mode:screen;}
+.streak{
+  position:absolute;width:2px;height:160px;
+  background:linear-gradient(180deg, transparent, rgba(230,41,63,0.9), transparent);
+  border-radius:2px;transform-origin:center;opacity:0;filter:blur(0.5px);
+}
+@media (max-width:900px){#flash-trail{display:none;}}
+
+/* ---------- WhatsApp float ---------- */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:60;display:flex;align-items:center;gap:10px;
+  background:#1ea952;color:#fff;padding:14px 16px;border-radius:999px;
+  box-shadow:0 8px 26px rgba(30,169,82,0.4);font-size:14px;font-weight:700;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), padding .3s ease;
+}
+.wa-float svg{width:24px;height:24px;fill:#fff;flex-shrink:0;}
+.wa-float span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .35s ease;}
+.wa-float:hover{transform:translateY(-4px) scale(1.03);}
+.wa-float:hover span{max-width:140px;}
+.wa-float::after{
+  content:'';position:absolute;inset:0;border-radius:999px;
+  border:2px solid rgba(30,169,82,0.6);animation:ring 2.2s infinite;
+}
+@keyframes ring{
+  0%{transform:scale(1);opacity:0.7;}
+  100%{transform:scale(1.5);opacity:0;}
+}
+@media (max-width:560px){
+  .wa-float{bottom:18px;right:18px;padding:14px;}
+  .wa-float span{display:none;}
+}
+</style>
+</head>
+<body>
+<div id="flash-trail"></div>
+
+<a class="wa-float" href="https://wa.me/254721816311" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.86 9.86 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.02h-.01a8.1 8.1 0 0 1-4.14-1.13l-.3-.18-3.13.82.84-3.05-.19-.31a8.13 8.13 0 0 1-1.24-4.26c0-4.5 3.66-8.16 8.17-8.16 2.18 0 4.23.85 5.78 2.4a8.1 8.1 0 0 1 2.39 5.77c0 4.5-3.67 8.1-8.17 8.1zm4.48-6.12c-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.97-.14.16-.29.18-.53.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42-.14-.01-.31-.01-.47-.01a.9.9 0 0 0-.65.31c-.22.24-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.45-.59 1.65-1.17.2-.57.2-1.06.14-1.17-.06-.11-.22-.17-.46-.29z"/></svg>
+  <span>Chat on WhatsApp</span>
+</a>
+
+<header id="site-header">
+  <div class="wrap nav">
+    <div class="logo"><span class="bolt">✦</span>FLASH MOVERS</div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#why">Why us</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:+254721816311">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+        +254 721 816 311
+      </a>
+      <a href="#contact" class="btn btn-primary">Get a quote →</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#process">How it works</a>
+    <a href="#why">Why us</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="btn btn-primary">Get a quote →</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <svg class="hero-lines" viewBox="0 0 1180 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="700" y1="0" x2="1180" y2="220" stroke="rgba(244,243,239,0.06)" stroke-width="1"/>
+      <line x1="820" y1="0" x2="1180" y2="340" stroke="rgba(244,243,239,0.06)" stroke-width="1"/>
+      <line x1="940" y1="0" x2="1180" y2="460" stroke="rgba(230,41,63,0.18)" stroke-width="2"/>
+    </svg>
+    <div class="hero-kenya">KENYA <span>↗</span></div>
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="eyebrow-tag reveal"><span class="dot"></span>Nairobi's moving crew</div>
+        <h1 class="reveal">Move fast.<br><em>Move easy.</em></h1>
+        <p class="lead reveal">Professional moving for homes and offices across Nairobi and Kenya. We pack, load and deliver without the drama.</p>
+        <div class="hero-ctas reveal">
+          <a href="#contact" class="btn btn-primary">Get your free quote →</a>
+          <a href="tel:+254721816311" class="btn btn-ghost">Call us now</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="stat"><b>4.8/5</b><span>Customer rating</span></div>
+          <div class="stat"><b>212+</b><span>Moves completed</span></div>
+          <div class="stat"><b>24hr</b><span>Response time</span></div>
+        </div>
+        <div class="hero-tags reveal">
+          <span>✦ Insured crews</span><span>✦ Upfront pricing</span><span>✦ No hidden fees</span><span>✦ 7 days a week</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / GALLERY -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">The work in motion</span>
+        <h2>Real crews. <em>Real care.</em></h2>
+        <p>From warehouse floors to final loading, our team handles every move with focus and precision.</p>
+      </div>
+      <div class="work-grid">
+        <div class="work-item reveal">
+          <span class="work-num">01</span>
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260909-WA0002-cwsVwOy7eQ5F6Iq6mQ6Emeg6RTIFWV.jpg" alt="Flash Movers crew carefully loading boxes into a truck" loading="lazy">
+          <div class="work-cap"><b>Loading day</b><span>Organised from the first box</span></div>
+        </div>
+        <div class="work-item reveal">
+          <span class="work-num">02</span>
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260909-WA0001-qtTvQecqm6yIvCEgnkXsB4T1a6NpId.jpg" alt="Packed moving boxes ready for transport beside a moving truck" loading="lazy">
+          <div class="work-cap"><b>Ready to move</b><span>Every item accounted for</span></div>
+        </div>
+        <div class="work-item reveal">
+          <span class="work-num">03</span>
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260909-WA0000-IuqR73CQk0proltJI3Mdv50hxv59o3.jpg" alt="Warehouse aisle with organised shelves and shipment boxes" loading="lazy">
+          <div class="work-cap"><b>In the warehouse</b><span>Safe, sorted and moving forward</span></div>
+        </div>
+        <div class="work-item reveal">
+          <span class="work-num">04</span>
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260909-WA0003-02sV8kQp55iuXsOg1r8ipx4u2zFYtL.jpg" alt="Flash Movers crew organising cartons and bags inside a warehouse" loading="lazy">
+          <div class="work-cap"><b>Handled with care</b><span>People who take pride in the details</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">What we do</span>
+        <h2>Everything moves <em>better with us.</em></h2>
+        <p>From the first box to the final handshake, our team takes care of the heavy lifting.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-num">01 ✦</span>
+          <h3>Home moving</h3>
+          <p>Careful packing, loading and delivery for apartments, homes and estates.</p>
+          <a href="#contact" class="btn-text">Learn more →</a>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">02 ✦</span>
+          <h3>Office relocation</h3>
+          <p>Keep your team moving with a planned, efficient office transition.</p>
+          <a href="#contact" class="btn-text">Learn more →</a>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">03 ✦</span>
+          <h3>Packing service</h3>
+          <p>We bring the materials, pack with care and label every box.</p>
+          <a href="#contact" class="btn-text">Learn more →</a>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">04 ✦</span>
+          <h3>Upcountry moves</h3>
+          <p>Reliable transport from Nairobi to towns across Kenya.</p>
+          <a href="#contact" class="btn-text">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap process-wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">How it works</span>
+        <h2>Simple from <em>start to finish.</em></h2>
+      </div>
+      <div class="process reveal">
+        <div class="process-step">
+          <span class="num">01</span>
+          <h3>Tell us what you need</h3>
+          <p>Fill in a few details or give us a call.</p>
+        </div>
+        <div class="process-step">
+          <span class="num">02</span>
+          <h3>Get a clear quote</h3>
+          <p>We assess your move and send a fair, upfront price.</p>
+        </div>
+        <div class="process-step">
+          <span class="num">03</span>
+          <h3>We do the heavy lifting</h3>
+          <p>Our crew packs, loads, transports and unloads.</p>
+        </div>
+        <div class="process-step">
+          <span class="num">04</span>
+          <h3>Settle in</h3>
+          <p>Put your feet up. Your move is officially done.</p>
+        </div>
+      </div>
+      <div class="process-wm reveal">FLASH <span>MOVERS ↗</span></div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Why Flash Movers</span>
+        <h2>Good people. <em>Good moves.</em></h2>
+        <p>We are a local team that believes moving should feel exciting, not exhausting.</p>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-item">
+          <span class="why-num">01</span>
+          <h3>We show up</h3>
+          <p>On time means on time. Our crews arrive ready to work.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-num">02</span>
+          <h3>We communicate</h3>
+          <p>No guessing. You always know what is happening and what it costs.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-num">03</span>
+          <h3>We care</h3>
+          <p>Your things are handled with the same care we would give our own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">From our customers</span>
+        <h2>Don't just take <em>our word for it.</em></h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The crew arrived early, worked fast and treated every piece like it was their own."</blockquote>
+          <div class="testi-who">
+            <div class="testi-avatar">JM</div>
+            <div><b>James M.</b><span>Lavington</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Clear quote, no surprise costs, and our move was done before lunch. Brilliant service."</blockquote>
+          <div class="testi-who">
+            <div class="testi-avatar">AN</div>
+            <div><b>Amina N.</b><span>Kilimani</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Flash Movers made a stressful day feel completely manageable. Highly recommended."</blockquote>
+          <div class="testi-who">
+            <div class="testi-avatar">DO</div>
+            <div><b>David O.</b><span>Karen</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section id="coverage">
+    <div class="wrap">
+      <div class="coverage reveal">
+        <div class="coverage-text">
+          <span class="section-eyebrow">Where we go</span>
+          <h2>From Nairobi <em>to anywhere.</em></h2>
+          <p>Based in Lavington. Moving across the city and upcountry Kenya.</p>
+          <a href="#contact" class="btn-text">Plan your move →</a>
+        </div>
+        <div class="coverage-towns">
+          <span class="town">Nairobi</span>
+          <span class="town">Mombasa</span>
+          <span class="town">Nakuru</span>
+          <span class="town">Kisumu</span>
+          <span class="town">Eldoret</span>
+          <span class="town">Thika</span>
+          <span class="town">Naivasha</span>
+          <span class="town">Machakos</span>
+          <span class="town">Nyeri</span>
+          <span class="town">Kakamega</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-eyebrow">Questions, answered</span>
+        <h2>Good to <em>know.</em></h2>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q"><span>How much does moving cost?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Cost depends on the size of your move, distance and how much packing you need. Tell us a few details and we'll send a clear, upfront quote with no hidden fees.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Do you move outside Nairobi?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Yes. Alongside local Nairobi moves, we run upcountry moves to towns across Kenya including Mombasa, Kisumu, Nakuru, Eldoret and more.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Do you provide packing materials?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Yes, we bring boxes, padding, wrapping and labels as part of our packing service, and our crew packs everything with care.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Are my belongings insured?</span><span class="plus"></span></button>
+          <div class="faq-a"><p>Yes, every move is handled by an insured crew, so your belongings are covered from loading to delivery.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-text reveal">
+        <span class="section-eyebrow">Ready when you are</span>
+        <h2>Let's get <em>you moving.</em></h2>
+        <p>Tell us a little about your move and we'll get back to you with a clear quote.</p>
+      </div>
+      <form class="contact-form reveal" id="quoteForm">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your full name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" placeholder="07xx xxx xxx" required>
+        </div>
+        <div class="field">
+          <label for="from">Moving from</label>
+          <input type="text" id="from" placeholder="e.g. Lavington" required>
+        </div>
+        <div class="field">
+          <label for="to">Moving to</label>
+          <input type="text" id="to" placeholder="e.g. Kilimani" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Get my free quote →</button>
+        <span class="form-note">We'll call or WhatsApp you back within 24 hours.</span>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><span class="bolt">✦</span>FLASH MOVERS</div>
+        <p>Moving Nairobi &amp; Kenya, fast.</p>
+      </div>
+      <a class="footer-phone" href="tel:+254721816311">+254 721 816 311 →</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Flash Movers</span>
+      <span>Lavington, Nairobi · Kenya</span>
+      <a href="mailto:hello@flashmovers.co.ke">hello@flashmovers.co.ke</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Cursor flash trail
+(function(){
+  const trailBox = document.getElementById('flash-trail');
+  if (!trailBox || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let last = 0;
+  window.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    if (now - last < 45) return;
+    last = now;
+    const s = document.createElement('div');
+    s.className = 'streak';
+    const angle = Math.random() * 40 - 20;
+    s.style.left = e.clientX + 'px';
+    s.style.top = (e.clientY - 90) + 'px';
+    s.style.transform = `rotate(${angle}deg)`;
+    trailBox.appendChild(s);
+    requestAnimationFrame(() => {
+      s.style.transition = 'opacity .5s ease, transform .5s ease';
+      s.style.opacity = '1';
+      requestAnimationFrame(() => {
+        s.style.opacity = '0';
+        s.style.transform += ' scaleY(0.6)';
+      });
+    });
+    setTimeout(() => s.remove(), 600);
+  }, { passive: true });
+})();
+
+// Header hide/show on scroll
+let lastY = window.scrollY;
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > lastY && y > 140) header.classList.add('hide');
+  else header.classList.remove('hide');
+  lastY = y;
+}, { passive: true });
+
+// Mobile menu
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+menuToggle.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', open);
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+}));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(other => {
+      if (other !== item) {
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      }
+    });
+    if (isOpen) {
+      item.classList.remove('open');
+      a.style.maxHeight = null;
+    } else {
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+// Contact form (demo submit)
+document.getElementById('quoteForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  const original = btn.textContent;
+  btn.textContent = 'Thanks — we\'ll be in touch →';
+  btn.style.background = '#1ea952';
+  setTimeout(() => { btn.textContent = original; btn.style.background = ''; e.target.reset(); }, 2600);
+});
+</script>
+
+</body>
+</html>
