@@ -6,6 +6,11 @@
 <meta name="theme-color" content="#090909">
 <meta name="description" content="Professional moving for homes and offices across Nairobi and Kenya. We pack, load and deliver without the drama.">
 <title>Flash Movers | Moving Nairobi &amp; Kenya, fast.</title>
+<link rel="canonical" href="https://flashmovers.co.ke/">
+<meta property="og:title" content="Flash Movers | Moving Nairobi & Kenya">
+<meta property="og:description" content="Professional home and office moving in Nairobi and across Kenya. Request a moving quote from Flash Movers.">
+<meta property="og:url" content="https://flashmovers.co.ke/">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -750,9 +755,9 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
     ['Moving from', document.getElementById('from').value],
     ['Moving to', document.getElementById('to').value]
   ];
-  const message = 'Hello Flash Movers, I would like a moving quotation.\\n\\n' +
-    values.map(([label, value]) => label + ': ' + value.trim()).join('\\n') +
-    '\\n\\nPlease contact me to discuss pricing and availability.';
+  const message = 'Hello Flash Movers, I would like a moving quotation.\n\n' +
+    values.map(([label, value]) => label + ': ' + value.trim()).join('\n') +
+    '\n\nPlease contact me to discuss pricing and availability.';
   window.open('https://wa.me/254721816311?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
   const note = form.querySelector('.form-note');
   if (note) note.textContent = 'WhatsApp is opening with your enquiry ready. Please press Send in WhatsApp.';
