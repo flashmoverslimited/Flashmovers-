@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://flashmovers.co.ke/sitemap.xml
+Sitemap: https://flashmovers.vercel.app/sitemap.xml
