@@ -1,6 +1,0 @@
-(() => {
- const toggle=document.querySelector('.menu-toggle'), mobile=document.querySelector('.mobile-nav');
- if(toggle&&mobile){toggle.addEventListener('click',()=>{const open=mobile.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));}
- document.querySelectorAll('[data-whatsapp-form]').forEach(form=>form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const data=new FormData(form);const rows=[];for(const [key,value] of data.entries()){if(String(value).trim())rows.push(key.replace(/[_-]/g,' ').replace(/\b\w/g,c=>c.toUpperCase())+': '+String(value).trim());}const message='Hello Flash Movers, I would like a moving quotation.\n\n'+rows.join('\n')+'\n\nPlease contact me to discuss availability and pricing.';const url='https://wa.me/254721816311?text='+encodeURIComponent(message);window.open(url,'_blank','noopener,noreferrer');const note=form.querySelector('.form-note');if(note)note.textContent='WhatsApp is opening with your enquiry ready to send. Please press Send in WhatsApp.';}));
- document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
-})();
